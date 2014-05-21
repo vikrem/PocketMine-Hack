@@ -1,6 +1,6 @@
 # PocketMine Hacking
 
-This document details how I modified PocketMine, a very popular Unity Android game, to get me infinite gems, an in-game purchase which can normally only be obtained via in-game purchase.
+This document details how I modified PocketMine, a very popular Unity-based Android game, to get me infinite _gems_, an in-game currency which can normally only be obtained via in-game purchase.
 
 
 ![Hacked PocketMine](hacked_pocketmine.png)
@@ -10,11 +10,12 @@ Let's start!
 ## Finding the save file
 
 I found the save file in /data/data/ca.roofdog.pocketmine/shared\_prefs/ca.roofdog.pocketmine.xml
-Its horrendously slow to open in vim, but Firefox surprising does the job and also cleans up the "&quots\;" everywhere.
+You might need to actually root your phone to access this.
+Its horrendously slow to open in vim, but Firefox surprising does the job and also cleans up the "&quots\;" everywhere in the file.
 
-We're mostly interested in the data under the key "\_data". This is your player data.
+We're mostly interested in the data under the key "\_data". This is your player data. You can see your gem count is literally just written right in here.
 
-We cannot directly edit it though! Doing so causes the game to invalidate your save and start anew.
+Can we simply just change it? Nope! Doing so causes the game to invalidate your save and reset all your data. But how did it know that we modified the save?
 
 ## Tracing Unity
 
