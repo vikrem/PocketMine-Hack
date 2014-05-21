@@ -1,9 +1,11 @@
 # PocketMine Hacking
 
-This document details how I modified PocketMine, a very popular Unity-based Android game, to get me infinite _gems_, an in-game currency which can normally only be obtained via in-game purchase.
+This document details how I modified PocketMine, a very popular Unity-based Android game, to get me a TON of _gems_ (see the 98267 in the screenshot below), an in-game currency which can normally only be obtained via in-game purchase.
 
 
 ![Hacked PocketMine](hacked_pocketmine.png)
+
+**This is for proof-of-concept only and was carried out only for educational purpose. There are no binaries and none will be available. Please don't use this to steal things.**
 
 Let's start!
 
