@@ -1,6 +1,9 @@
 # PocketMine Hacking
 
-This document concerns with how I subverted pocketmine, a Unity Android game, to get me 9999 moneygold.
+This document details how I modified PocketMine, a very popular Unity Android game, to get me infinite gems, an in-game purchase which can normally only be obtained via in-game purchase.
+
+
+![Hacked PocketMine](hacked_pocketmine.png)
 
 Let's start!
 
@@ -19,7 +22,7 @@ The next step was to modify the file and watch _adb logcat_ for any debug activi
 
 	[Unity]: Invalid save game hash, resetting data.
 
-So the next step is to do a search for this string in the entire apk after dumping the apk with _apktool_. We find that "Assembly-CSharp.dll" in the Managed/ folder gives a hit.
+So the next step is to do a search for this string in the entire apk after dumping the apk with _apktool_. We find that "Assembly-CSharp.dll" in the Managed/ folder gives a hit. Too bad it's a binary.
 
 All the code and scripts for the game itself are in this assembly, so we copy all the dlls in Managed/ over to a new directory and install Mono.
 
@@ -67,4 +70,6 @@ From this, we can deduce that it's calling Security::ComputeHash() with the data
 
 So we open up Assembly-CSharp in Xamarin Studio (mono IDE) and attach the assembly and go rip the source code for Security::ComputeHash.
 And write a little program to hash our modified save file. This can be found in __Hasher.cs__.
+
+You can find some quick and dirty sample code in this repo.
 
